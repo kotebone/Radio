@@ -1,6 +1,6 @@
 package ru.netology.domain;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioAdvancedTest {
     @Test
@@ -8,9 +8,9 @@ public class RadioAdvancedTest {
         RadioAdvanced radio = new RadioAdvanced();
         String expected = "RadioRock";
 
-        assertNull(radio.getName());
+        Assertions.assertNull(radio.getName());
         radio.setName("RadioRock");
-        assertEquals(expected, radio.getName());
+        Assertions.assertEquals(expected, radio.getName());
     }
 
     @Test
@@ -23,7 +23,7 @@ public class RadioAdvancedTest {
 
         int expected = 7;
         int actual = radio.getCurrentNumFm();
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class RadioAdvancedTest {
 
         int expected = 4;
         int actual = radio.getCurrentNumFm();
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class RadioAdvancedTest {
 
         int expected = 0;
         int actual = radio.getCurrentNumFm();
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class RadioAdvancedTest {
 
         int expected = 9;
         int actual = radio.getCurrentNumFm();
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -75,7 +75,7 @@ public class RadioAdvancedTest {
 
         int expected = 6;
         int actual = radio.getCurrentNumFm();
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -88,7 +88,7 @@ public class RadioAdvancedTest {
 
         int expected = 10;
         int actual = radio.getCurrentLevVol();
-        assertEquals (expected, actual);
+        Assertions.assertEquals (expected, actual);
 
     }
 
@@ -102,7 +102,7 @@ public class RadioAdvancedTest {
 
         int expected = 0;
         int actual = radio.getCurrentLevVol();
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
 
     }
 
@@ -114,7 +114,7 @@ public class RadioAdvancedTest {
 
         int expected = 0;
         int actual = radio.getMinLevVol();
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -125,18 +125,18 @@ public class RadioAdvancedTest {
 
         int expected = 10;
         int actual = radio.getMaxLevVol();
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldInitFieldToZeroValues() {
         RadioTest radio = new RadioTest();
-        assertNull(radio.name);
-        assertEquals(9, radio.maxNumFm);
-        assertEquals(0, radio.minNumFm);
-        assertEquals(0, radio.currentNumFm);
-        assertEquals(0, radio.minLevVol);
-        assertEquals(10, radio.maxLevVol);
-        assertEquals(0, radio.currentLevVol);
+        Assertions.assertNull(radio.name);
+        Assertions.assertEquals(9, radio.maxNumFm);
+        Assertions.assertEquals(0, radio.minNumFm);
+        Assertions.assertEquals(0, radio.currentNumFm);
+        Assertions.assertEquals(0, radio.minLevVol);
+        Assertions.assertEquals(10, radio.maxLevVol);
+        Assertions.assertEquals(0, radio.currentLevVol);
     }
 }

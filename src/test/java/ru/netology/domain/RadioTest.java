@@ -38,7 +38,7 @@ public class RadioTest {
     public void shouldChangeFields() {
         Radio radio = new Radio();
         assertEquals(0, radio.currentNumFm);
-        radio.currentNumFm = -10;
-        assertEquals(-10, radio.currentNumFm);
+        radio.currentNumFm = 0;
+        assertEquals(0, radio.currentNumFm);
     }
 }

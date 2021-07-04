@@ -76,13 +76,6 @@ public class RadioAdvanced {
                 if (currentLevVol < minLevVol) {
                         return;
                 }
-                if (currentLevVol < 10) {
-                        currentLevVol = currentLevVol + 1;
-                }
-                if (currentLevVol > 10) {
-                        currentLevVol = maxLevVol;
-
                         this.currentLevVol = currentLevVol;
                 }
         }
-}
