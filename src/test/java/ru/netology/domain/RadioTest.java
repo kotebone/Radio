@@ -22,7 +22,7 @@ public class RadioTest {
     public void shouldInitFieldToZeroValues() {
         Radio radio = new Radio();
         assertNull(radio.name);
-        assertEquals(10, radio.maxNumFm);
+        assertEquals(0, radio.maxNumFm);
         assertEquals(0, radio.minNumFm);
         assertEquals(0, radio.currentNumFm);
         assertFalse(radio.on);
