@@ -5,10 +5,51 @@ public class RadioAdvanced {
         private boolean on;
         private int currentNumFm;
         private int minNumFm = 0;
-        private int maxNumFm = 9;
+        private int maxNumFm = 10;
+        private int limitNumFm = 100;
         private int currentLevVol;
         private int minLevVol = 0;
-        private int maxLevVol = 10;
+        private int maxLevVol = 100;
+
+        public RadioAdvanced(){
+                this.limitNumFm = 100;
+        }
+
+        public RadioAdvanced(int limitNumFm) {
+                this.limitNumFm = limitNumFm;
+        }
+
+        public int fmOneStepNext() {
+                if (currentNumFm == limitNumFm-1) {
+                        currentNumFm = minNumFm;
+                        return minNumFm;
+                }
+                currentNumFm++;
+                return currentNumFm;
+        }
+
+        public int fmOneStepPrev() {
+                if (currentNumFm == minNumFm) {
+                        currentNumFm = limitNumFm-1;
+                        return limitNumFm-1;
+                }
+                currentNumFm--;
+                return currentNumFm;
+        }
+
+        public void volOneStepInc() {
+                if (currentLevVol >= maxLevVol) {
+                        return;
+                }
+                currentLevVol++;
+        }
+
+        public void volOneStepRed() {
+                if (currentLevVol <= minLevVol) {
+                        return;
+                }
+                currentLevVol--;
+        }
 
         public String getName() {
                 return name;
@@ -76,6 +117,6 @@ public class RadioAdvanced {
                 if (currentLevVol < minLevVol) {
                         return;
                 }
-                        this.currentLevVol = currentLevVol;
-                }
+                this.currentLevVol = currentLevVol;
         }
+}
