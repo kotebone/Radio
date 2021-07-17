@@ -5,7 +5,7 @@ public class Radio {
         boolean on;
         int currentNumFm;
         int minNumFm = 0;
-        int maxNumFm;
+        int limitNumFm = 100;
         int currentLevVol;
         int minLevVol = 0;
         int maxLevVol = 100;

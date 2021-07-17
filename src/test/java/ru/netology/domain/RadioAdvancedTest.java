@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RadioAdvancedTest {
     @Test
     public void shouldGetAndSet() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
         String expected = "RadioHardRock";
         Assertions.assertNull(radio.getName());
         radio.setName("RadioHardRock");
@@ -16,7 +16,7 @@ public class RadioAdvancedTest {
 
     @Test
     public void switchOnNextFm() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
         radio.setCurrentNumFm(4);
         radio.fmOneStepNext();
         int actual = radio.getCurrentNumFm();
@@ -25,7 +25,7 @@ public class RadioAdvancedTest {
 
     @Test
     public void switchOnPrevFm() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
         radio.setCurrentNumFm(8);
         radio.fmOneStepPrev();
         int actual = radio.getCurrentNumFm();
@@ -34,9 +34,8 @@ public class RadioAdvancedTest {
 
     @Test
     public void returnMinFmAfterMax() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
         radio.setMinNumFm(0);
-        radio.setMaxNumFm(10);
         radio.setCurrentNumFm(0);
 
         radio.setCurrentNumFm(-1);
@@ -48,34 +47,29 @@ public class RadioAdvancedTest {
 
     @Test
     public void returnMaxFmAfterMin() {
-        RadioAdvanced radio = new RadioAdvanced(10);
-        radio.setMinNumFm(0);
-        radio.setMaxNumFm(10);
-        radio.setCurrentNumFm(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
+        radio.setCurrentNumFm(100);
 
-        radio.setCurrentNumFm(11);
+        radio.setCurrentNumFm(101);
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentNumFm();
         assertEquals(expected, actual);
     }
 
     @Test
     public void setCurrentNumFm() {
-        RadioAdvanced radio = new RadioAdvanced(10);
-        radio.setMinNumFm(0);
-        radio.setMaxNumFm(9);
-        radio.setCurrentNumFm(7);
-        radio.setCurrentNumFm(6);
+        RadioAdvanced radio = new RadioAdvanced(100);
+        radio.setCurrentNumFm(78);
 
-        int expected = 6;
+        int expected = 78;
         int actual = radio.getCurrentNumFm();
         assertEquals(expected, actual);
     }
 
     @Test
     public void incVolUpMax() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
         radio.setMaxLevVol(100);
         radio.setMinLevVol(0);
         radio.setCurrentLevVol(100);
@@ -90,7 +84,7 @@ public class RadioAdvancedTest {
 
     @Test
     public void redVolLowMin() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
         radio.setMaxLevVol(100);
         radio.setMinLevVol(0);
         radio.setCurrentLevVol(0);
@@ -105,7 +99,7 @@ public class RadioAdvancedTest {
 
     @Test
     public void setMinVol() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
         radio.setCurrentLevVol(10);
         radio.setMinLevVol(0);
 
@@ -118,7 +112,7 @@ public class RadioAdvancedTest {
 
     @Test
     public void setMaxVol() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
         radio.setCurrentLevVol(11);
         radio.setMaxLevVol(100);
 
@@ -131,7 +125,7 @@ public class RadioAdvancedTest {
 
     @Test
     void volOneStepInc() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
 
         radio.setCurrentLevVol(15);
         radio.volOneStepInc();
@@ -141,7 +135,7 @@ public class RadioAdvancedTest {
 
     @Test
     void volOneStepRed() {
-        RadioAdvanced radio = new RadioAdvanced(10);
+        RadioAdvanced radio = new RadioAdvanced(100);
 
         radio.setCurrentLevVol(25);
         radio.volOneStepRed();

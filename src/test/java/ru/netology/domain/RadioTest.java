@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
-    public int maxNumFm = 10;
+    public int maxNumFm;
     public int minNumFm = 0;
     private int limitNumFm = 100;
     public int currentNumFm;
@@ -22,7 +22,6 @@ public class RadioTest {
     public void shouldInitFieldToZeroValues() {
         Radio radio = new Radio();
         assertNull(radio.name);
-        assertEquals(0, radio.maxNumFm);
         assertEquals(0, radio.minNumFm);
         assertEquals(0, radio.currentNumFm);
         assertFalse(radio.on);
@@ -39,7 +38,7 @@ public class RadioTest {
     public void shouldChangeFields() {
         Radio radio = new Radio();
         assertEquals(0, radio.currentNumFm);
-        radio.currentNumFm = 10;
-        assertEquals(10, radio.currentNumFm);
+        radio.currentNumFm = 100;
+        assertEquals(100, radio.currentNumFm);
     }
 }
