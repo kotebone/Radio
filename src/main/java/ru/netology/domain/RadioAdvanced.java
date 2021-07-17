@@ -5,7 +5,6 @@ public class RadioAdvanced {
         private boolean on;
         private int currentNumFm;
         private int minNumFm = 0;
-        private int maxNumFm = 10;
         private int limitNumFm = 100;
         private int currentLevVol;
         private int minLevVol = 0;
@@ -59,12 +58,12 @@ public class RadioAdvanced {
                 this.name = name;
         }
 
-        public int getMaxNumFm() {
-                return maxNumFm;
+        public int getLimitNumFm() {
+                return limitNumFm;
         }
 
-        public void setMaxNumFm(int maxNumFm) {
-                this.maxNumFm = maxNumFm;
+        public void setLimitNumFm(int limitNumFm) {
+                this.limitNumFm = limitNumFm;
         }
 
         public int getMinNumFm() {
@@ -80,7 +79,7 @@ public class RadioAdvanced {
         }
 
         public void setCurrentNumFm(int currentNumFm) {
-                if (currentNumFm > maxNumFm) {
+                if (currentNumFm > limitNumFm) {
                         return;
                 }
                 if (currentNumFm < minNumFm) {
